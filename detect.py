@@ -98,7 +98,7 @@ def detect(save_img=False):
                 os.makedirs(location_center_dir)
             location_center_path = location_center_dir + '/' + 'changkuan' + (
                 '' if dataset.mode == 'image' else f'_{frame}')  #
-            flocation = open(location_center_path + '.txt', 'a')
+            flocation = open(location_center_path + '.txt', 'w')
             #######################
 
             gn = torch.tensor(im0.shape)[[1, 0, 1, 0]]  # normalization gain whwh
@@ -135,7 +135,7 @@ def detect(save_img=False):
                     if save_txt:  # Write to file
                         xywh = (xyxy2xywh(torch.tensor(xyxy).view(1, 4)) / gn).view(-1).tolist()  # normalized xywh
                         line = (cls, *xywh, conf) if opt.save_conf else (cls, *xywh)  # label format
-                        with open(txt_path + '.txt', 'a') as f:
+                        with open(txt_path + '.txt', 'w') as f:
                             f.write(('%g ' * len(line)).rstrip() % line + '\n')
 
                     if save_img or view_img:  # Add bbox to image

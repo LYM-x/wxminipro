@@ -6,7 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="450c0da0-29aa-44d4-b6cd-88788ca12a00" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wxcloudrun/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/wxcloudrun/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/detect.py" beforeDir="false" afterPath="$PROJECT_DIR$/detect.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
