@@ -30,7 +30,7 @@ def count():
     
     #将当前目录下的一张图片上传到云
     #获取token,上传图片
-    response = requests.get('https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&appid=wx0caa0328c1763b7d&secret=7b24bcebbcbdb257f1cf931b55c2d7e7',verify=False)
+    response = requests.get('https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&appid=wx58e304158e10dab3&secret=5dda05b05f8db565e2561bffb1f58880',verify=False)
     data ={
         "env": "prod-1ghgatwy02a74c12",#修改成自己的环境id
         "path": outputoath
@@ -42,7 +42,7 @@ def count():
     data2={
         "Content-Type":(None,".jpg"), #此处为上传文件类型
         "key": (None,outputoath),
-        "Signature": (None,response.json()['authorization']),
+        "Signature": (None,response.json()['authorization']), #authorization
         'x-cos-security-token': (None,response.json()['token']),
         'x-cos-meta-fileid': (None,response.json()['cos_file_id']),
         'file': (outputoath,open(r"runs/detect/exp/output.jpg","rb"))
