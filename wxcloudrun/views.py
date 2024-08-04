@@ -32,12 +32,13 @@ def count():
     #获取token,上传图片
     response = requests.get('https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&appid=wx0caa0328c1763b7d&secret=7b24bcebbcbdb257f1cf931b55c2d7e7',verify=False)
     data ={
-        "env": "prod-7gjw31ca51aea1ae",
+        "env": "prod-1ghgatwy02a74c12",#修改成自己的环境id
         "path": outputoath
     }
     #转json
     data = json.dumps(data) #一定要把参数转为json格式，不然会请求失败
     response = requests.post("https://api.weixin.qq.com/tcb/uploadfile?access_token="+response.json()['access_token'],data,verify=False)
+
     data2={
         "Content-Type":(None,".jpg"), #此处为上传文件类型
         "key": (None,outputoath),
